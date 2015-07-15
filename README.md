@@ -17,6 +17,50 @@ Originally extracted from [`mdast-man`][mdast-man] plugin.
 [david]: https://david-dm.org/eush77/mdast-normalize-headings
 [david-badge]: https://david-dm.org/eush77/mdast-normalize-headings.png
 
+## Example
+
+```js
+var mdast = require('mdast');
+var mdastNormalizeHeadings = requireq('mdast-normalize-headings');
+
+var input = '# Title\n\n# Description\n\n## Usage\n\n### Example\n\n## API\n\n# Related';
+// # Title
+//
+// # Description
+//
+// ## Usage
+//
+// ### Example
+//
+// ## API
+//
+// # Related
+//
+
+var ast = mdast.parse(input);
+mdastNormalizeHeadings(ast);
+
+var output = mdast.stringify(ast);
+// # Title
+//
+// ## Description
+//
+// ### Usage
+//
+// #### Example
+//
+// ### API
+//
+// ## Related
+//
+```
+
+## API
+
+#### `mdastNormalizeHeadings(ast)`
+
+Modifies AST in-place and returns the reference for convenience.
+
 ## Install
 
 ```
