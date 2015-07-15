@@ -12,11 +12,12 @@ var fs = require('fs'),
 test.Test.prototype.check = function (test, message) {
   var load = function (ext) {
     var filename = path.join(__dirname, test + ext);
-    return fs.readFileSync(filename, { encoding: 'utf8' });
+    var markdown = fs.readFileSync(filename, { encoding: 'utf8' });
+    return mdast.parse(markdown, { position: false });
   };
 
-  var input = mdast.parse(load('.in'));
-  var output = mdast.parse(load('.out'));
+  var input = load('.in');
+  var output = load('.out');
 
   this.deepEqual(normalizeHeadings(input), output, message);
 };
