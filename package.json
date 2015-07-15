@@ -8,7 +8,8 @@
     "test": "tape test/*.js"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "plugin.js"
   ],
   "homepage": "https://github.com/eush77/mdast-normalize-headings",
   "repository": "eush77/mdast-normalize-headings",

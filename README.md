@@ -6,11 +6,14 @@
 
 Providing multiple top-level headings per single Markdown document is confusing for tools that assume that there is only a single top-level heading that contains some meta-information (usually title) about the document.
 
-This util makes sure that there is no more than a single top-level heading in the document by shifting all headings one level deeper if needed.
+This util makes sure that there is no more than a single top-level heading in the document by shifting all other headings one level deeper if needed.
 
 Originally extracted from [`mdast-man`][mdast-man] plugin.
 
-[mdast-man]: https://github.com/woorm/mdast-man
+This module provides both AST transformation and a plugin for [`mdast`][mdast].
+
+[mdast]: https://github.com/wooorm/mdast
+[mdast-man]: https://github.com/wooorm/mdast-man
 
 [travis]: https://travis-ci.org/eush77/mdast-normalize-headings
 [travis-badge]: https://travis-ci.org/eush77/mdast-normalize-headings.svg
@@ -60,6 +63,10 @@ var output = mdast.stringify(ast);
 #### `mdastNormalizeHeadings(ast)`
 
 Modifies AST in-place and returns the reference for convenience.
+
+#### `mdast.use(require('mdast-normalize-headings/plugin'))`
+
+Attach this transformation as a plugin.
 
 ## Install
 
