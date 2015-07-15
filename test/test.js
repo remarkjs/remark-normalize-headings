@@ -24,6 +24,9 @@ test.Test.prototype.check = function (test, message) {
 
 
 test(function (t) {
+  t.check('no-headings', 'No-op if there is no top-level headings');
+  t.check('one-heading', 'No-op if there is a single top-level heading');
   t.check('two-headings', 'Makes the second header one level deeper');
+  t.check('more-headings', 'Shifts all other headings one level deeper');
   t.end();
 });
