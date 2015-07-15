@@ -15,7 +15,7 @@ module.exports = function (ast) {
 
   if (titleCount > 1) {
     visit(ast, 'heading', function (node) {
-      if (node !== title) {
+      if (node !== title && node.depth < 6) {
         node.depth += 1;
       }
     });
