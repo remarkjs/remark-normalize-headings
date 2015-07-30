@@ -1,6 +1,6 @@
 'use strict';
 
-var normalizeHeadings = require('..'),
+var normalizeHeadings = require('../transform'),
     normalizeHeadingsPlugin = require('../plugin');
 
 var test = require('tape'),

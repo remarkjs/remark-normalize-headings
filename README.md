@@ -24,7 +24,7 @@ This module provides both AST transformation and a plugin for [`mdast`][mdast].
 
 ```js
 var mdast = require('mdast');
-var mdastNormalizeHeadings = requireq('mdast-normalize-headings');
+var mdastNormalizeHeadings = require('mdast-normalize-headings');
 
 var input = '# Title\n\n# Description\n\n## Usage\n\n### Example\n\n## API\n\n# Related';
 // # Title
@@ -40,10 +40,7 @@ var input = '# Title\n\n# Description\n\n## Usage\n\n### Example\n\n## API\n\n# 
 // # Related
 //
 
-var ast = mdast.parse(input);
-mdastNormalizeHeadings(ast);
-
-var output = mdast.stringify(ast);
+mdast.use(mdastNormalizeHeadings).process(input)
 // # Title
 //
 // ## Description
@@ -60,13 +57,29 @@ var output = mdast.stringify(ast);
 
 ## API
 
-#### `mdastNormalizeHeadings(ast)`
+### Plugin
+
+```js
+var mdastNormalizeHeadings = require('mdast-normalize-headings');
+
+mdast.use(mdastNormalizeHeadings)
+```
+
+### AST Transformer
+
+```
+var mdastNormalizeHeadings = require('mdast-normalize-headings/transform');
+
+mdastNormalizeHeadings(ast)
+```
 
 Modifies AST in-place and returns the reference for convenience.
 
-#### `mdast.use(require('mdast-normalize-headings/plugin'))`
+## CLI
 
-Attach this transformation as a plugin.
+```
+mdast -u mdast-normalize-headings
+```
 
 ## Install
 

@@ -1,6 +1,6 @@
 'use strict';
 
-var normalizeHeadings = require('./');
+var normalizeHeadings = require('./transform');
 
 
 module.exports = function () {
