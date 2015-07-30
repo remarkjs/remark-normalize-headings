@@ -6,7 +6,7 @@
 
 Providing multiple top-level headings per single Markdown document is confusing for tools that assume that there is only a single top-level heading that contains some meta-information (usually title) about the document.
 
-This [`mdast`][mdast] plugin makes sure that there is no more than a single top-level heading in the document by shifting all other headings one level deeper if needed.
+This [`mdast`][mdast] plugin makes sure that there is only one top-level heading in the document by adjusting headings depths accordingly.
 
 Originally extracted from [`mdast-man`][mdast-man].
 

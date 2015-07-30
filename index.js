@@ -13,6 +13,13 @@ module.exports = function () {
       }
     });
 
+    if (!titleCount) {
+      visit(ast, 'heading', function (node) {
+        node.depth = 1;
+        return false;
+      });
+    }
+
     if (titleCount > 1) {
       visit(ast, 'heading', function (node) {
         if (node !== title && node.depth < 6) {
