@@ -1,28 +1,29 @@
-[![npm](https://nodei.co/npm/mdast-normalize-headings.png)](https://npmjs.com/package/mdast-normalize-headings)
+[![npm](https://nodei.co/npm/remark-normalize-headings.png)](https://npmjs.com/package/remark-normalize-headings)
 
-# mdast-normalize-headings
+# remark-normalize-headings
 
 [![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
 
 Providing multiple top-level headings per single Markdown document is confusing for tools that assume that there is only a single top-level heading that contains some meta-information (usually title) about the document.
 
-This [`mdast`][mdast] plugin makes sure that there is only one top-level heading in the document by adjusting headings depths accordingly.
+This [remark] plugin makes sure that there is only one top-level heading in the document by adjusting headings depths accordingly.
 
-Originally extracted from [`mdast-man`][mdast-man].
+Originally extracted from [remark-man].
 
+[remark]: https://github.com/wooorm/remark
+[remark-man]: https://github.com/wooorm/remark-man
 [mdast]: https://github.com/wooorm/mdast
-[mdast-man]: https://github.com/wooorm/mdast-man
+[mdast-normalize-headings]: https://github.com/eush77/mdast-normalize-headings
 
-[travis]: https://travis-ci.org/eush77/mdast-normalize-headings
-[travis-badge]: https://travis-ci.org/eush77/mdast-normalize-headings.svg
-[david]: https://david-dm.org/eush77/mdast-normalize-headings
-[david-badge]: https://david-dm.org/eush77/mdast-normalize-headings.png
+[travis]: https://travis-ci.org/eush77/remark-normalize-headings
+[travis-badge]: https://travis-ci.org/eush77/remark-normalize-headings.svg
+[david]: https://david-dm.org/eush77/remark-normalize-headings
+[david-badge]: https://david-dm.org/eush77/remark-normalize-headings.png
 
 ## Example
 
 ```js
-var mdast = require('mdast');
-var mdastNormalizeHeadings = require('mdast-normalize-headings');
+var normalizeHeadings = require('remark-normalize-headings');
 
 var input = '# Title\n\n# Description\n\n## Usage\n\n### Example\n\n## API\n\n# Related';
 // # Title
@@ -38,7 +39,7 @@ var input = '# Title\n\n# Description\n\n## Usage\n\n### Example\n\n## API\n\n# 
 // # Related
 //
 
-mdast.use(mdastNormalizeHeadings).process(input)
+remark.use(normalizeHeadings).process(input)
 // # Title
 //
 // ## Description
@@ -55,24 +56,24 @@ mdast.use(mdastNormalizeHeadings).process(input)
 
 ## API
 
-```js
-var mdastNormalizeHeadings = require('mdast-normalize-headings');
-
-mdast.use(mdastNormalizeHeadings)
-```
+#### `remark.use(normalizeHeadings)`
 
 Modifies AST in-place.
 
 ## CLI
 
 ```
-mdast -u mdast-normalize-headings
+$ remark -u remark-normalize-headings
 ```
+
+## Related
+
+- [mdast-normalize-headings] — [mdast] transformation utility that is in the core of this plugin.
 
 ## Install
 
 ```
-npm install mdast-normalize-headings
+npm install remark-normalize-headings
 ```
 
 ## License
