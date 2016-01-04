@@ -1,6 +1,6 @@
 'use strict';
 
-var visit = require('mdast-util-visit');
+var visit = require('unist-util-visit');
 
 module.exports = function () {
   return function (ast) {

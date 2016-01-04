@@ -4,7 +4,7 @@ var normalizeHeadingsPlugin = require('..'),
     normalizeHeadings = normalizeHeadingsPlugin();
 
 var test = require('tape'),
-    mdast = require('mdast');
+    remark = require('remark');
 
 var fs = require('fs'),
     path = require('path');
@@ -13,7 +13,7 @@ var fs = require('fs'),
 var load = function (filename) {
   filename = path.join(__dirname, filename);
   var markdown = fs.readFileSync(filename, { encoding: 'utf8' });
-  return mdast.parse(markdown, { position: false });
+  return remark.parse(markdown, { position: false });
 };
 
 
@@ -44,7 +44,7 @@ test('Plugin', function (t) {
   var input = load('hierarchy.in');
   var output = load('hierarchy.out');
 
-  t.deepEqual(mdast.use(normalizeHeadingsPlugin).run(input), output,
-              'Works as a plugin for mdast');
+  t.deepEqual(remark.use(normalizeHeadingsPlugin).run(input), output,
+              'Works as a plugin for remark');
   t.end();
 });
