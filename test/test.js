@@ -12,7 +12,7 @@ var fs = require('fs'),
 var load = function (filename) {
   filename = path.join(__dirname, filename);
   var markdown = fs.readFileSync(filename, { encoding: 'utf8' });
-  return remark.parse(markdown, { position: false });
+  return remark().data('settings', { position: false }).parse(markdown);
 };
 
 
@@ -20,6 +20,6 @@ test(function (t) {
   var input = load('hierarchy.in');
   var output = load('hierarchy.out');
 
-  t.deepEqual(remark.use(normalizeHeadings).run(input), output);
+  t.deepEqual(remark().use(normalizeHeadings).runSync(input), output);
   t.end();
 });

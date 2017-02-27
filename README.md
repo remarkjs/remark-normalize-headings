@@ -39,7 +39,7 @@ var input = '# Title\n\n# Description\n\n## Usage\n\n### Example\n\n## API\n\n# 
 // # Related
 //
 
-remark.use(normalizeHeadings).process(input)
+remark().use(normalizeHeadings).processSync(input).toString();
 // # Title
 //
 // ## Description
@@ -56,7 +56,7 @@ remark.use(normalizeHeadings).process(input)
 
 ## API
 
-#### `remark.use(normalizeHeadings)`
+#### `remark().use(normalizeHeadings)`
 
 Modifies AST in-place.
 
