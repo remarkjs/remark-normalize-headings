@@ -27,7 +27,7 @@
     "level"
   ],
   "dependencies": {
-    "mdast-normalize-headings": "^0.3.0"
+    "mdast-normalize-headings": "^1.0.0"
   },
   "devDependencies": {
     "remark": "^7.0.0",
