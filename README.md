@@ -12,7 +12,7 @@ Originally extracted from [remark-man][].
 
 [remark]: https://github.com/wooorm/remark
 [remark-man]: https://github.com/wooorm/remark-man
-[mdast]: https://github.com/wooorm/mdast
+[mdast]: https://github.com/syntax-tree/mdast
 [mdast-normalize-headings]: https://github.com/eush77/mdast-normalize-headings
 
 [travis]: https://travis-ci.org/eush77/remark-normalize-headings
