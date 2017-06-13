@@ -6,9 +6,9 @@
 
 Providing multiple top-level headings per single Markdown document is confusing for tools that assume that there is only a single top-level heading that contains some meta-information (usually title) about the document.
 
-This [remark] plugin makes sure that there is only one top-level heading in the document by adjusting headings depths accordingly.
+This [remark][] plugin makes sure that there is only one top-level heading in the document by adjusting headings depths accordingly.
 
-Originally extracted from [remark-man].
+Originally extracted from [remark-man][].
 
 [remark]: https://github.com/wooorm/remark
 [remark-man]: https://github.com/wooorm/remark-man
@@ -68,7 +68,7 @@ $ remark -u remark-normalize-headings
 
 ## Related
 
-- [mdast-normalize-headings] — [mdast] transformation utility that is in the core of this plugin.
+-   [mdast-normalize-headings][] — [mdast][] transformation utility that is in the core of this plugin.
 
 ## Install
 
