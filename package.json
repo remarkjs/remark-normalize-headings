@@ -28,7 +28,7 @@
     "mdast-normalize-headings": "^1.0.0"
   },
   "devDependencies": {
-    "remark": "^7.0.0",
+    "remark": "^9.0.0",
     "tape": "^4.0.0"
   },
   "scripts": {
