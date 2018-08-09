@@ -1,8 +1,7 @@
-'use strict';
+'use strict'
 
-var normalizeHeadings = require('mdast-normalize-headings');
+var normalizeHeadings = require('mdast-normalize-headings')
 
-
-module.exports = function () {
-  return normalizeHeadings;
-};
+module.exports = function() {
+  return normalizeHeadings
+}

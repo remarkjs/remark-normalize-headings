@@ -2,23 +2,17 @@
 
 # remark-normalize-headings
 
-[![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
+[![Build Status][travis-badge]][travis]
+[![Dependency Status][david-badge]][david]
 
-Providing multiple top-level headings per single Markdown document is confusing for tools that assume that there is only a single top-level heading that contains some meta-information (usually title) about the document.
+Providing multiple top-level headings per single Markdown document is confusing
+for tools that assume that there is only a single top-level heading that
+contains some meta-information (usually title) about the document.
 
-This [remark][] plugin makes sure that there is only one top-level heading in the document by adjusting headings depths accordingly.
+This [remark][] plugin makes sure that there is only one top-level heading in
+the document by adjusting headings depths accordingly.
 
 Originally extracted from [remark-man][].
-
-[remark]: https://github.com/wooorm/remark
-[remark-man]: https://github.com/wooorm/remark-man
-[mdast]: https://github.com/syntax-tree/mdast
-[mdast-normalize-headings]: https://github.com/eush77/mdast-normalize-headings
-
-[travis]: https://travis-ci.org/eush77/remark-normalize-headings
-[travis-badge]: https://travis-ci.org/eush77/remark-normalize-headings.svg
-[david]: https://david-dm.org/eush77/remark-normalize-headings
-[david-badge]: https://david-dm.org/eush77/remark-normalize-headings.png
 
 ## Example
 
@@ -62,20 +56,37 @@ Modifies AST in-place.
 
 ## CLI
 
-```
+```sh
 $ remark -u remark-normalize-headings
 ```
 
 ## Related
 
--   [mdast-normalize-headings][] — [mdast][] transformation utility that is in the core of this plugin.
+*   [mdast-normalize-headings][]
+    — [mdast][] transformation utility that is in the core of this plugin.
 
 ## Install
 
-```
+```sh
 npm install remark-normalize-headings
 ```
 
 ## License
 
 MIT
+
+[remark]: https://github.com/remarkjs/remark
+
+[remark-man]: https://github.com/remarkjs/remark-man
+
+[mdast]: https://github.com/syntax-tree/mdast
+
+[mdast-normalize-headings]: https://github.com/eush77/mdast-normalize-headings
+
+[travis]: https://travis-ci.org/eush77/remark-normalize-headings
+
+[travis-badge]: https://travis-ci.org/eush77/remark-normalize-headings.svg
+
+[david]: https://david-dm.org/eush77/remark-normalize-headings
+
+[david-badge]: https://david-dm.org/eush77/remark-normalize-headings.png
