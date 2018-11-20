@@ -1,4 +1,10 @@
-# remark-normalize-headings [![Build Status][build-badge]][build-status] [![Chat][chat-badge]][chat]
+# remark-normalize-headings
+
+[![Build][build-badge]][build]
+[![Downloads][downloads-badge]][downloads]
+[![Chat][chat-badge]][chat]
+[![Sponsors][sponsors-badge]][collective]
+[![Backers][backers-badge]][collective]
 
 Providing multiple top-level headings per single Markdown document is confusing
 for tools that assume that there is only a single top-level heading that
@@ -91,11 +97,21 @@ repository, organisation, or community you agree to abide by its terms.
 
 [build-badge]: https://img.shields.io/travis/remarkjs/remark-normalize-headings.svg
 
-[build-status]: https://travis-ci.org/remarkjs/remark-normalize-headings
+[build]: https://travis-ci.org/remarkjs/remark-normalize-headings
 
-[chat-badge]: https://img.shields.io/gitter/room/remarkjs/Lobby.svg
+[downloads-badge]: https://img.shields.io/npm/dm/remark-normalize-headings.svg
 
-[chat]: https://gitter.im/remarkjs/Lobby
+[downloads]: https://www.npmjs.com/package/remark-normalize-headings
+
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/remark
+
+[sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
+
+[backers-badge]: https://opencollective.com/unified/backers/badge.svg
+
+[collective]: https://opencollective.com/unified
 
 [license]: license
 
