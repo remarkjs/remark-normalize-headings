@@ -1,6 +1,6 @@
 {
   "name": "remark-normalize-headings",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "remark plugin to make sure there is no more than a single top-level heading in a document",
   "license": "MIT",
   "keywords": [
