@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "browserify": "^16.0.0",
+    "nyc": "^14.0.0",
     "prettier": "^1.0.0",
     "remark": "^10.0.0",
     "remark-cli": "^6.0.0",
@@ -45,7 +46,14 @@
     "build-mangle": "browserify . -s remarkNormalizeHeadings -p tinyify -o remark-normalize-headings.min.js",
     "build": "npm run build-bundle && npm run build-mangle",
     "test-api": "node test",
-    "test": "npm run format && npm run build && npm run test-api"
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
   },
   "prettier": {
     "tabWidth": 2,
