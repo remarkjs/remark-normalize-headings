@@ -2,3 +2,13 @@ language: node_js
 node_js:
   - lts/dubnium
   - node
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: kt1MXv2FJGGoPEz7/AG86Yg9LII8tSqYhPvRN5PErWC/0dt2jKo9BUpC+Ynhx85HJvLOyF5cHhhCaB0w6oNQuinBjJhcziDV5y+0qOZI9VUlKSOU0sjqbfXuRYoH68UhuEjOmZM7++WHq0U8g9FsRq7XABvIWgdzP/WFiACJ7HYuOGmi5gqc2XQd4RIGcagavMJg62llsw8UPBXKWjAPDUKC4rL0uNSl6UvSKVmADeBDfDhh1FeQoz0aW2z9peIdrZwFxbOhmKxIvzjMkPWiQqS1RCbJEDxNaTonkLMnO9ndsbHp/FC/r4+YKPoLgELpaAK20AbM1slxR/CJHnjHOixLpT8OKjtXgbzvq4QNFhvKhw5/pzdltPyrC78OJ5wVOtVJlf+xhf+aUKpyO5jSTAkZnzh4z4Fb8Omjg8nDu+BiXcbclixiMZbB6U5kWNU3BfbtCGcdi/jfD24CACNk/xR8fTaRqSkMnFpWiGDxDc7KzDMAQYS0WlyeBj2OC+5yDWHoOcW97MKuGJnbPKZo7bMbC9nJiviSq4bpI7w/GVWapQzQvhRxZCygEaBnY/KbpZY4VlKI73r72m5jGUzNmCdm/01/XocBPuE38mlDH8cmlLoXrA3Ur05/SwEA859HpXoXoR4uH1iU94pcNhpipi/IByPjlFpxlC8gSleMvGo=
+  file:
+    - 'remark-normalize-headings.js'
+    - 'remark-normalize-headings.min.js'
+  on:
+    tags: true

@@ -1,6 +1,2 @@
-.DS_Store
-*.log
-node_modules/
 remark-normalize-headings.js
 remark-normalize-headings.min.js
-yarn.lock

@@ -30,17 +30,22 @@
     "mdast-normalize-headings": "^1.0.0"
   },
   "devDependencies": {
+    "browserify": "^16.0.0",
     "prettier": "^1.0.0",
     "remark": "^10.0.0",
     "remark-cli": "^6.0.0",
     "remark-preset-wooorm": "^5.0.0",
     "tape": "^4.0.0",
+    "tinyify": "^2.0.0",
     "xo": "^0.24.0"
   },
   "scripts": {
     "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "build-bundle": "browserify . -s remarkNormalizeHeadings -o remark-normalize-headings.js",
+    "build-mangle": "browserify . -s remarkNormalizeHeadings -p tinyify -o remark-normalize-headings.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
     "test-api": "node test",
-    "test": "npm run format && npm run test-api"
+    "test": "npm run format && npm run build && npm run test-api"
   },
   "prettier": {
     "tabWidth": 2,
