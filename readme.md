@@ -1,33 +1,33 @@
 # remark-normalize-headings
 
 [![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
-[![Chat][chat-badge]][chat]
+[![Size][size-badge]][size]
 [![Sponsors][sponsors-badge]][collective]
 [![Backers][backers-badge]][collective]
+[![Chat][chat-badge]][chat]
+
+[**remark**][remark] plugin to make sure that there is only one top-level
+heading in a document by adjusting heading depths accordingly.
 
 Providing multiple top-level headings per single Markdown document is confusing
 for tools that assume that there is only a single top-level heading that
 contains some meta-information (usually title) about the document.
 
-This [**remark**][remark] plugin makes sure that there is only one top-level
-heading in the document by adjusting heading depths accordingly.
-
-Originally extracted from [`remark-man`][remark-man].
-
-## Installation
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install remark-normalize-headings
 ```
 
-## Usage
+## Use
 
 Say we have the following file, `example.md`:
 
-```md
+```markdown
 # Title
 
 # Description
@@ -58,7 +58,7 @@ remark()
 
 Now, running `node example` yields:
 
-```md
+```markdown
 # Title
 
 ## Description
@@ -76,36 +76,43 @@ Now, running `node example` yields:
 
 #### `remark().use(normalizeHeadings)`
 
-Transform the tree to normalize headings.
+Make sure that there is only one top-level heading in a document by adjusting
+heading depths accordingly.
 
 ## Related
 
 *   [`mdast-normalize-headings`][mdast-normalize-headings]
-    — [mdast][] transformation utility that is in the core of this plugin
+    — [**mdast**][mdast] utility that is in the core of this plugin
 
 ## Contribute
 
-See [`contributing.md` in `remarkjs/remark`][contributing] for ways to get
-started.
+See [`contributing.md`][contributing] in [`remarkjs/.github`][health] for ways
+to get started.
+See [`support.md`][support] for ways to get help.
 
-This organisation has a [Code of Conduct][coc].  By interacting with this
-repository, organisation, or community you agree to abide by its terms.
+This project has a [Code of Conduct][coc].
+By interacting with this repository, organisation, or community you agree to
+abide by its terms.
 
 ## License
 
 [MIT][license] © Eugene Sharygin
 
-[build-badge]: https://img.shields.io/travis/remarkjs/remark-normalize-headings.svg
+[build-badge]: https://img.shields.io/travis/remarkjs/remark-normalize-headings/master.svg
 
 [build]: https://travis-ci.org/remarkjs/remark-normalize-headings
+
+[coverage-badge]: https://img.shields.io/codecov/c/github/remarkjs/remark-normalize-headings.svg
+
+[coverage]: https://codecov.io/github/remarkjs/remark-normalize-headings
 
 [downloads-badge]: https://img.shields.io/npm/dm/remark-normalize-headings.svg
 
 [downloads]: https://www.npmjs.com/package/remark-normalize-headings
 
-[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+[size-badge]: https://img.shields.io/bundlephobia/minzip/remark-normalize-headings.svg
 
-[chat]: https://spectrum.chat/unified/remark
+[size]: https://bundlephobia.com/result?p=remark-normalize-headings
 
 [sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
 
@@ -113,17 +120,23 @@ repository, organisation, or community you agree to abide by its terms.
 
 [collective]: https://opencollective.com/unified
 
-[license]: license
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/remark
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[contributing]: https://github.com/remarkjs/remark/blob/master/contributing.md
+[health]: https://github.com/remarkjs/.github
 
-[coc]: https://github.com/remarkjs/remark/blob/master/code-of-conduct.md
+[contributing]: https://github.com/remarkjs/.github/blob/master/contributing.md
+
+[support]: https://github.com/remarkjs/.github/blob/master/support.md
+
+[coc]: https://github.com/remarkjs/.github/blob/master/code-of-conduct.md
+
+[license]: license
 
 [remark]: https://github.com/remarkjs/remark
-
-[remark-man]: https://github.com/remarkjs/remark-man
 
 [mdast]: https://github.com/syntax-tree/mdast
 
