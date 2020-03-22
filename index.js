@@ -2,6 +2,6 @@
 
 var normalizeHeadings = require('mdast-normalize-headings')
 
-module.exports = function() {
+module.exports = function () {
   return normalizeHeadings
 }

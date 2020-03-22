@@ -4,7 +4,7 @@ var test = require('tape')
 var remark = require('remark')
 var normalizeHeadings = require('.')
 
-test('remark-normalize-headings', function(t) {
+test('remark-normalize-headings', function (t) {
   var parse = remark().data('settings', {position: false}).parse
   var run = remark().use(normalizeHeadings).runSync
 
