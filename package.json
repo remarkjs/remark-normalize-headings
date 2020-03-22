@@ -18,6 +18,10 @@
   ],
   "repository": "remarkjs/remark-normalize-headings",
   "bugs": "https://github.com/remarkjs/remark-normalize-headings/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
   "author": "Eugene Sharygin <eush77@gmail.com>",
   "contributors": [
     "Eugene Sharygin <eush77@gmail.com>",
