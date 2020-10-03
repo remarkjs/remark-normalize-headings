@@ -15,6 +15,12 @@ Providing multiple top-level headings per single Markdown document is confusing
 for tools that assume that there is only a single top-level heading that
 contains some meta-information (usually title) about the document.
 
+## Note!
+
+This plugin is ready for the new parser in remark
+([`remarkjs/remark#536`](https://github.com/remarkjs/remark/pull/536)).
+No change is needed: it works exactly the same now as it did before!
+
 ## Install
 
 [npm][]:
