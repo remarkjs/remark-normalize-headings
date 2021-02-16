@@ -110,9 +110,9 @@ abide by its terms.
 
 [MIT][license] © Eugene Sharygin
 
-[build-badge]: https://img.shields.io/travis/remarkjs/remark-normalize-headings.svg
+[build-badge]: https://github.com/remarkjs/remark-normalize-headings/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/remarkjs/remark-normalize-headings
+[build]: https://github.com/remarkjs/remark-normalize-headings/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/remarkjs/remark-normalize-headings.svg
 
