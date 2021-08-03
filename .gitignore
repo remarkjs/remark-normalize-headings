@@ -1,8 +1,6 @@
-.DS_Store
-*.log
-.nyc_output/
 coverage/
 node_modules/
-remark-normalize-headings.js
-remark-normalize-headings.min.js
+.nyc_output/
+.DS_Store
+*.log
 yarn.lock

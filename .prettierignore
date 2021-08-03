@@ -1,5 +1,2 @@
 coverage/
-remark-normalize-headings.js
-remark-normalize-headings.min.js
-*.json
 *.md
