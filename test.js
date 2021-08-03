@@ -1,9 +1,7 @@
-'use strict'
-
-var test = require('tape')
-var remark = require('remark')
-var removePosition = require('unist-util-remove-position')
-var normalizeHeadings = require('.')
+import test from 'tape'
+import remark from 'remark'
+import removePosition from 'unist-util-remove-position'
+import normalizeHeadings from './index.js'
 
 test('remark-normalize-headings', function (t) {
   var actual = remark().parse(

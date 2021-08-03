@@ -1,7 +1,5 @@
-'use strict'
+import normalizeHeadings from 'mdast-normalize-headings'
 
-var normalizeHeadings = require('mdast-normalize-headings')
-
-module.exports = function () {
+export default function remarkNormalizeHeadings() {
   return normalizeHeadings
 }
