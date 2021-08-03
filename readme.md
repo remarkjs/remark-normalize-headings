@@ -23,6 +23,9 @@ No change is needed: it works exactly the same now as it did before!
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -50,14 +53,16 @@ Say we have the following file, `example.md`:
 And our script, `example.js`, looks as follows:
 
 ```js
-var vfile = require('to-vfile')
-var remark = require('remark')
-var normalizeHeadings = require('remark-normalize-headings')
+import {readSync} from 'to-vfile'
+import {remark} from 'remark'
+import remarkNormalizeHeadings from 'remark-normalize-headings'
+
+const file = readSync('example.md')
 
 remark()
-  .use(normalizeHeadings)
-  .process(vfile.readSync('example.md'), function(err, file) {
-    if (err) throw err
+  .use(remarkNormalizeHeadings)
+  .process(file)
+  .then((file) => {
     console.log(String(file))
   })
 ```
@@ -80,7 +85,10 @@ Now, running `node example` yields:
 
 ## API
 
-#### `remark().use(normalizeHeadings)`
+This package exports no identifiers.
+The default export is `remarkNormalizeHeadings`.
+
+#### `unified().use(remarkNormalizeHeadings)`
 
 Make sure that there is only one top-level heading in a document by adjusting
 heading depths accordingly.
