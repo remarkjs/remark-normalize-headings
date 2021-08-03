@@ -3,8 +3,8 @@ import {remark} from 'remark'
 import {removePosition} from 'unist-util-remove-position'
 import remarkNormalizeHeadings from './index.js'
 
-test('remarkNormalizeHeadings', function (t) {
-  var actual = remark().parse(
+test('remarkNormalizeHeadings', (t) => {
+  const actual = remark().parse(
     [
       '# One',
       '# Two',
@@ -18,7 +18,7 @@ test('remarkNormalizeHeadings', function (t) {
 
   remark().use(remarkNormalizeHeadings).runSync(actual)
 
-  var expected = remark().parse(
+  const expected = remark().parse(
     [
       '# One',
       '## Two',
