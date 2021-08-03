@@ -1,4 +1,4 @@
-import normalizeHeadings from 'mdast-normalize-headings'
+import {normalizeHeadings} from 'mdast-normalize-headings'
 
 export default function remarkNormalizeHeadings() {
   return normalizeHeadings

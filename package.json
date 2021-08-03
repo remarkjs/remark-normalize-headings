@@ -35,7 +35,7 @@
     "index.js"
   ],
   "dependencies": {
-    "mdast-normalize-headings": "^2.0.0"
+    "mdast-normalize-headings": "^3.0.0"
   },
   "devDependencies": {
     "c8": "^7.0.0",
