@@ -1,9 +1,9 @@
 import test from 'tape'
-import remark from 'remark'
-import removePosition from 'unist-util-remove-position'
-import normalizeHeadings from './index.js'
+import {remark} from 'remark'
+import {removePosition} from 'unist-util-remove-position'
+import remarkNormalizeHeadings from './index.js'
 
-test('remark-normalize-headings', function (t) {
+test('remarkNormalizeHeadings', function (t) {
   var actual = remark().parse(
     [
       '# One',
@@ -16,7 +16,7 @@ test('remark-normalize-headings', function (t) {
     ].join('\n\n')
   )
 
-  remark().use(normalizeHeadings).runSync(actual)
+  remark().use(remarkNormalizeHeadings).runSync(actual)
 
   var expected = remark().parse(
     [
