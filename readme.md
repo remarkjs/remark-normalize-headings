@@ -211,8 +211,6 @@ abide by its terms.
 
 [unified]: https://github.com/unifiedjs/unified
 
-[mdast]: https://github.com/syntax-tree/mdast
-
 [mdast-normalize-headings]: https://github.com/syntax-tree/mdast-normalize-headings
 
 [xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
