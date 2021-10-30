@@ -5,8 +5,8 @@
 import {normalizeHeadings} from 'mdast-normalize-headings'
 
 /**
- * Plugin to make sure that there is only one top-level heading in a document
- * by adjusting heading depths accordingly.
+ * Plugin to make sure there is a single top level heading in a document by
+ * adjusting heading ranks accordingly.
  *
  * @type {import('unified').Plugin<void[], Root>}
  */
