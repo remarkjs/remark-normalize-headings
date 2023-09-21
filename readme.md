@@ -49,14 +49,14 @@ npm install remark-normalize-headings
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import remarkNormalizeHeadings from 'https://esm.sh/remark-normalize-headings@3'
+import remarkNormalizeHeadings from 'https://esm.sh/remark-normalize-headings@4'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import remarkNormalizeHeadings from 'https://esm.sh/remark-normalize-headings@3?bundle'
+  import remarkNormalizeHeadings from 'https://esm.sh/remark-normalize-headings@4?bundle'
 </script>
 ```
 
