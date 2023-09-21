@@ -1,13 +1,14 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {remark} from 'remark'
-import remarkNormalizeHeadings from './index.js'
+import remarkNormalizeHeadings from 'remark-normalize-headings'
 
 test('remarkNormalizeHeadings', async function (t) {
   await t.test('should expose the public api', async function () {
-    assert.deepEqual(Object.keys(await import('./index.js')).sort(), [
-      'default'
-    ])
+    assert.deepEqual(
+      Object.keys(await import('remark-normalize-headings')).sort(),
+      ['default']
+    )
   })
 
   await t.test('should work', async function () {
