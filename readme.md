@@ -18,6 +18,7 @@ document by adjusting heading ranks accordingly.
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
+    *   [`unified().use(remarkNormalizeHeadings)`](#unifieduseremarknormalizeheadings)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Security](#security)
@@ -30,12 +31,6 @@ document by adjusting heading ranks accordingly.
 This package is a [unified][] ([remark][]) plugin to ensure there is one top
 level heading in a document.
 
-**unified** is a project that transforms content with abstract syntax trees
-(ASTs).
-**remark** adds support for markdown to unified.
-**mdast** is the markdown AST that remark uses.
-This is a remark plugin that transforms mdast.
-
 ## When should I use this?
 
 This project is useful if you’re dealing with user generated content and want to
@@ -44,8 +39,8 @@ document) which everything else falls under.
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
-In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
+This package is [ESM only][esm].
+In Node.js (version 16+), install with [npm][]:
 
 ```sh
 npm install remark-normalize-headings
@@ -70,83 +65,90 @@ In browsers with [`esm.sh`][esmsh]:
 Say we have the following file `example.md`:
 
 ```markdown
-# Title
+# Pluto
 
-# Description
+# History
 
-## Usage
+## Discovery
 
-### Example
+## Name and symbol
 
-## API
+## Planet X disproved
 
-# Related
+# Orbit
 ```
 
-And our module `example.js` looks as follows:
+…and a module `example.js`:
 
 ```js
-import {read} from 'to-vfile'
 import {remark} from 'remark'
 import remarkNormalizeHeadings from 'remark-normalize-headings'
+import {read} from 'to-vfile'
 
-main()
+const file = await remark()
+  .use(remarkNormalizeHeadings)
+  .process(await read('example.md'))
 
-async function main() {
-  const file = await remark()
-    .use(remarkNormalizeHeadings)
-    .process(await read('example.md'))
-
-  console.log(String(file))
-}
+console.log(String(file))
 ```
 
-Now, running `node example` yields:
+…then running `node example.js` yields:
 
 ```markdown
-# Title
+# Pluto
 
-## Description
+## History
 
-### Usage
+### Discovery
 
-#### Example
+### Name and symbol
 
-### API
+### Planet X disproved
 
-## Related
+## Orbit
 ```
 
 ## API
 
 This package exports no identifiers.
-The default export is `remarkNormalizeHeadings`.
+The default export is
+[`remarkNormalizeHeadings`][api-remark-normalize-headings].
 
-#### `unified().use(remarkNormalizeHeadings)`
+### `unified().use(remarkNormalizeHeadings)`
 
-Plugin to make sure there is a single top level heading in a document by
-adjusting heading ranks accordingly.
-There are no options.
+Make sure there is a single top level heading in a document by adjusting
+heading ranks accordingly.
+
+###### Parameters
+
+There are no parameters.
+
+###### Returns
+
+Transform ([`Transformer`][unified-transformer]).
 
 ## Types
 
 This package is fully typed with [TypeScript][].
-There are no extra exported types.
+It exports no additional types.
 
 ## Compatibility
 
-Projects maintained by the unified collective are compatible with all maintained
+Projects maintained by the unified collective are compatible with maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
-Our projects sometimes work with older versions, but this is not guaranteed.
+
+When we cut a new major release, we drop support for unmaintained versions of
+Node.
+This means we try to keep the current release line,
+`remark-normalize-headings@^3`, compatible with Node.js 12.
 
 This plugin works with `unified` version 2+ and `remark` version 3+.
 
 ## Security
 
-Use of `remark-normalize-headings` does not involve [**rehype**][rehype]
-([**hast**][hast]) or user content so there are no openings for
-[cross-site scripting (XSS)][xss] attacks.
+Use of `remark-normalize-headings` does not involve **[rehype][]**
+(**[hast][]**) or user content so there are no openings for
+[cross-site scripting (XSS)][wiki-xss] attacks.
 
 ## Related
 
@@ -179,9 +181,9 @@ abide by its terms.
 
 [downloads]: https://www.npmjs.com/package/remark-normalize-headings
 
-[size-badge]: https://img.shields.io/bundlephobia/minzip/remark-normalize-headings.svg
+[size-badge]: https://img.shields.io/bundlejs/size/remark-normalize-headings
 
-[size]: https://bundlephobia.com/result?p=remark-normalize-headings
+[size]: https://bundlejs.com/?q=remark-normalize-headings
 
 [sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
 
@@ -195,28 +197,34 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
 [esmsh]: https://esm.sh
 
 [health]: https://github.com/remarkjs/.github
 
-[contributing]: https://github.com/remarkjs/.github/blob/HEAD/contributing.md
+[contributing]: https://github.com/remarkjs/.github/blob/main/contributing.md
 
-[support]: https://github.com/remarkjs/.github/blob/HEAD/support.md
+[support]: https://github.com/remarkjs/.github/blob/main/support.md
 
-[coc]: https://github.com/remarkjs/.github/blob/HEAD/code-of-conduct.md
+[coc]: https://github.com/remarkjs/.github/blob/main/code-of-conduct.md
 
 [license]: license
 
-[remark]: https://github.com/remarkjs/remark
-
-[unified]: https://github.com/unifiedjs/unified
+[hast]: https://github.com/syntax-tree/hast
 
 [mdast-normalize-headings]: https://github.com/syntax-tree/mdast-normalize-headings
 
-[xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+[rehype]: https://github.com/rehypejs/rehype
+
+[remark]: https://github.com/remarkjs/remark
 
 [typescript]: https://www.typescriptlang.org
 
-[rehype]: https://github.com/rehypejs/rehype
+[unified]: https://github.com/unifiedjs/unified
 
-[hast]: https://github.com/syntax-tree/hast
+[unified-transformer]: https://github.com/unifiedjs/unified#transformer
+
+[wiki-xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[api-remark-normalize-headings]: #unifieduseremarknormalizeheadings
